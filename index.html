@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="holdon"src="./sounds/holdon.mp3"></audio>
+    <audio id="oh"src="./sounds/oh.mp3"></audio>
+    <audio id="shoot"src="./sounds/shoot.mp3"></audio>
+    <audio id="icanmakeitfaster"src="./sounds/icanmakeitfaster.mp3"></audio>
+    <button class="holdon">Hold On (A)</button>
+    <button class="oh">Oh (S)</button>
+    <button class="shoot">shoot (K)</button>
+    <button class="icanmakeitfaster">i can make it faster(L)</button>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(".holdon").click(function(){
+            document.getElementById("holdon").play();
+        })
+        $(".oh").click(function(){
+            document.getElementById("oh").play();
+        })
+        $(".shoot").click(function(){
+            document.getElementById("shoot").play();
+        })
+        $(".icanmakeitfaster").click(function(){
+            document.getElementById("icanmakeitfaster").play();
+        })
+
+        document.onkeydown = function(e) {
+            var keyCode = e.keyCode;
+            if (keyCode == 65) {
+                $(".holdon").trigger("click");
+                document.getElementById("holdon").play();
+            } 
+            else if (keyCode == 83) {
+                document.getElementById("oh").play();
+            } 
+            else if (keyCode == 75) {
+                document.getElementById("shoot").play();
+            } 
+            else if (keyCode == 76) {
+                document.getElementById("icanmakeitfaster").play();
+            } 
+        }
+    </script>
+</body>
+</html>
